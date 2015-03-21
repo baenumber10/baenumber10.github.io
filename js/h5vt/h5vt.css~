@@ -1,0 +1,16 @@
+/* H5VT */
+
+.h5vtooltip{
+	position:absolute;	
+	padding:6px;	
+	
+	border:none;
+	border-radius:10px;
+	background:#000;
+	color:#fff;
+	
+	box-shadow:0px 0px 6px #999;
+}
+
+.h5vtooltip > video{margin:0; padding:0; border-radius:6px;}					
+/* // H5VT */

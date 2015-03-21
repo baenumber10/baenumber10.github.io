@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+    <body>
+        <div class="container">
+            <!-- Top Navigation -->
+
+            <header class="codrops-header">
+                <h1>Minimal Form Interface <span>Simplistic, single input view form</span></h1> 
+            </header>
+         <section>
+               <div id="search-demo-container">
+      <input type="text" id="search-input" placeholder="Search...">
+      <ul id="results-container"></ul>
+    </div>         
+            </section>
+        </div><!-- /container -->
+
+
+<style type="text/css">
+
+input{
+
+background: rgba(38, 194, 129, 1);
+
+}
+
+
+
+</style>
+
+
+
+        <script src="js/classie2.js"></script>
+        <script src="js/stepsForm.js"></script>
+        <script>
+            var theForm = document.getElementById( 'theForm' );
+
+            new stepsForm( theForm, {
+                onSubmit : function( form ) {
+                    // hide form
+                    classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
+
+                    /*
+                    form.submit()
+                    or
+                    AJAX request (maybe show loading indicator while we don't have an answer..)
+                    */
+
+                    // let's just simulate something...
+                    var messageEl = theForm.querySelector( '.final-message' );
+                    messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
+                    classie.addClass( messageEl, 'show' );
+                }
+            } );
+        </script>
+
+  <script src="/jekyll-search.js" type="text/javascript"></script>
+    
+    
+    <script type="text/javascript">
+      SimpleJekyllSearch.init({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        dataSource: '/search.json',
+        searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+        noResultsText: 'No results found',
+        limit: 10,
+        fuzzy: false,
+      })
+    </script>
+    </body>
+</html>
