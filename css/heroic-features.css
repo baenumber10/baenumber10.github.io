@@ -10,6 +10,11 @@ font-size: 13px;
 }
 
 
+.fa-calendar:before {
+  content: "\f073";
+  color: rgb(118, 215, 176);
+}
+
 
 li.more {
 
