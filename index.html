@@ -4,7 +4,11 @@
     <title>nirviral</title>
     <meta name="description" content="Stream movies and TV shows in excellent DVD, 720p, 1080p and 3D quality right in your browser at ultrafast speeds.">
     <meta name="keywords" content="nirviral, movie, movies, stream, streaming, torrent, torrents, tv, show, episode, web, flix, popcorn, express, popcorn express, popcornexpress, popcorn time, popcorntime, cinefi, yify, yify-torrents, yts, download, 720p, 1080p, 3D">
-
+        <link charset="utf-8" href="fonts/stylesf.css" rel="stylesheet" type=
+    "text/css">
+    <link charset="utf-8" href="fonts/stylesf2.css" rel="stylesheet" type=
+    "text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Comfortaa:300" rel="stylesheet" type="text/css">
     <link href="css/app.css" rel="stylesheet" type="text/css">
@@ -37,6 +41,48 @@ alt="web analytics"></a></div></noscript>
     </script>
 </head>
 <body>
+    <div id="top_line" style=" 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 90;
+  height: 100%;
+  background-color: #B591D3;
+  height: 5px;
+
+  "></div>
+
+
+
+
+
+
+
+
+<div id="header1">
+    <center>
+        <div id="title"><a href="index.html" style="
+
+            font-family: Lobster;
+  font-size: 20pt;
+  color: white;
+  height: 55px;
+  line-height: 50px;
+  margin: 0 auto;
+  text-align: center;
+  text-shadow: 0 2px 0 rgba(255,255,255,0.3);
+  width: 300px;
+
+            ">Nirviral</a></div>
+    </center>
+    </div>
+
+
+
+
+
+
     <div id="sidebar" class="scroll navigable-pane" data-pane-number="0">
         <a id="sidebar-bookmarks" class="navigable-item">
             <i class="icon-heart"></i>
@@ -68,19 +114,44 @@ alt="web analytics"></a></div></noscript>
             <span id="open-info" class="sidebar-foot-link simptip-position-top simptip-fade simptip-smooth" title="Info" data-tooltip="Info">
                 <i class="icon-info"></i>
             </span>
+            <span id="open-settings" class="sidebar-foot-link simptip-position-top simptip-fade simptip-smooth" title="Settings" data-tooltip="Settings">
+                <i class="icon-cog"></i>
+            </span>
 
         </div>
     </div>
 
-    <div id="bookmarks" class="main" style="display: none">
-        <div class="media-search">
+   <div id="settings-modal" class="modal scroll" style="display: none">
+        <h2 class="modal-title">Settings</h2>
+        <div class="modal-desc"><span class="brand">nirviral.com</span> 2.0.0</div>
+        <hr>
+        <form class="modal-content scroll" id="settings">
+            <div class="control">
+                <label for="default-download-directory">Default download location</label>
+                <input id="default-download-directory" data-storage-id="settings-default-download-directory" type="text" value="">
+            </div>
+            <div class="control">
+                <label for="keep-downloaded-files">Keep downloaded files</label>
+                <input id="keep-downloaded-files" data-storage-id="settings-keep-downloaded-files" type="checkbox" checked>
+            </div>
+
+            <hr>
+            <div style="float: right">
+                <a id="settings-reset" class="btn btn-r">RESET</a>
+            </div>
+        </form>
+    </div>
+
+
+    <div id="bookmarks" class="main" style="display: none;   background: white;">
+        <div class="media-search" style="">
             <h2 class="search-media-title"><i class="icon-film"></i> Movies</h2>
             <div id="movie-bookmarks-loading-indicator" class="spinner-ellipsis" style="display: none">
                 <div class="bounce1"></div>
                 <div class="bounce2"></div>
                 <div class="bounce3"></div>
             </div>
-            <div id="movie-bookmarks-results" class="results-page search-results navigable-pane scroll" data-pane-number="1" data-loading-indicator="#movie-bookmarks-loading-indicator"></div>
+            <div id="movie-bookmarks-results" class="results-page search-results navigable-pane scroll" data-pane-number="1" data-loading-indicator="#movie-bookmarks-loading-indicator" style=""></div>
         </div>
         <div class="media-search">
             <h2 class="search-media-title"><i class="icon-tv"></i> TV shows</h2>
@@ -94,49 +165,49 @@ alt="web analytics"></a></div></noscript>
     </div>
 
     <div id="history" class="main" style="display: none">
-        <div class="media-search">
+        <div class="media-search" style="background: white">
             <h2 class="search-media-title"><i class="icon-film"></i> Movies</h2>
             <div id="movie-history-loading-indicator" class="spinner-ellipsis" style="display: none">
                 <div class="bounce1"></div>
                 <div class="bounce2"></div>
                 <div class="bounce3"></div>
             </div>
-            <div id="movie-history-results" class="results-page search-results navigable-pane scroll" data-pane-number="1" data-loading-indicator="#movie-history-loading-indicator"></div>
+            <div id="movie-history-results" class="results-page search-results navigable-pane scroll" data-pane-number="1" data-loading-indicator="#movie-history-loading-indicator" style="  background: white;"></div>
         </div>
-        <div class="media-search">
-            <h2 class="search-media-title"><i class="icon-tv"></i> TV shows</h2>
+        <div class="media-search" style="  background: white;">
+            <h2 class="search-media-title" ><i class="icon-tv"></i> TV shows</h2>
             <div id="tv-history-loading-indicator" class="spinner-ellipsis" style="display: none">
                 <div class="bounce1"></div>
                 <div class="bounce2"></div>
                 <div class="bounce3"></div>
             </div>
-            <div id="tv-history-results" class="results-page search-results navigable-pane scroll" data-pane-number="2" data-loading-indicator="#tv-history-loading-indicator"></div>
+            <div id="tv-history-results" class="results-page search-results navigable-pane scroll" data-pane-number="2" data-loading-indicator="#tv-history-loading-indicator" style="  background: white;"></div>
         </div>
     </div>
 
-    <div id="search-results" class="main" style="display: none">
+    <div id="search-results" class="main" style="display: none;  background-color: #FFF;">
         <form id="search-bar">
             <label for="keywords"><i class="icon-search"></i></label>
-            <input id="keywords" type="text" autocomplete="off" placeholder="Search for TV shows or movies...">
+            <input id="keywords" type="text" autocomplete="off" placeholder="Search for TV shows or movies..." style="background-color: rgba(33, 34, 42, 1);">
         </form>
 
         <div class="media-search">
-            <h2 class="search-media-title"><i class="icon-film"></i> Movies</h2>
-            <div id="movie-search-loading-indicator" class="spinner-ellipsis" style="display: none">
+
+            <div id="movie-search-loading-indicator" class="spinner-ellipsis" style="display: none;">
                 <div class="bounce1"></div>
                 <div class="bounce2"></div>
                 <div class="bounce3"></div>
             </div>
-            <div id="movie-search-results" class="results-page search-results navigable-pane scroll" data-pane-number="1" data-loading-indicator="#movie-search-loading-indicator"></div>
+            <div id="movie-search-results" class="results-page search-results navigable-pane scroll" data-pane-number="1" data-loading-indicator="#movie-search-loading-indicator" style="  margin-top: -3em;"></div>
         </div>
         <div class="media-search">
-            <h2 class="search-media-title"><i class="icon-tv"></i> TV shows</h2>
+
             <div id="tv-search-loading-indicator" class="spinner-ellipsis" style="display: none">
                 <div class="bounce1"></div>
                 <div class="bounce2"></div>
                 <div class="bounce3"></div>
             </div>
-            <div id="tv-search-results" class="results-page search-results navigable-pane scroll" data-pane-number="2" data-loading-indicator="#tv-search-loading-indicator"></div>
+            <div id="tv-search-results" class="results-page search-results navigable-pane scroll" data-pane-number="2" data-loading-indicator="#tv-search-loading-indicator" style="  margin-top: -3em;"></div>
         </div>
     </div>
 
@@ -149,13 +220,9 @@ alt="web analytics"></a></div></noscript>
 
     <div id="downloads" class="main scroll" style="display: none">
         <div>
-            <h2>Downloads</h2>
-            <form id="add-torrent-form" class="clearfix">
-                <input id="add-torrent-link" type="text" value="" placeholder="Enter a magnet uri or a link to a .torrent file...">
-                <a id="add-torrent-start" class="btn" style="float: right">ADD</a>
-            </form>
-            <hr>
-            <table style="display: none">
+            <h2 style="color: #A0FFD9;">Downloads</h2>
+
+            <table style="display: none;">
                 <tr id="torrent-list-row-template">
                     <td class="torrent-list-name-container"><a class="torrent-list-name"></a></td>
                     <td class="torrent-list-size"><span>0 GB</span></td>
@@ -318,9 +385,13 @@ alt="web analytics"></a></div></noscript>
             <p>If you are happy to install this plugin, hit the SETUP NOW button to begin using <span class="brand">nirviral.com</span>.</p>
             <p style="text-align: center">
                 <small>This plugin is currently only available for <a href="https://www.google.com/intl/en/chrome/browser" target="_blank">Google Chrome</a> or <a href="http://www.mozilla.org/en-GB/firefox/new" target="_blank">Firefox</a> on Windows and Mac.</small>
-                <a id="setup-torque" class="btn-lg">SETUP NOW</a>
+                <a id="setup-torque" class="btn-lg" style="  margin-top: 29px;">SETUP NOW</a>
             </p>
             <p class="warning"><strong>Warning</strong>: Streaming movies in this way might not be legal in your country, so use this service at your own risk.</p>
+
+            <p class="warning"><strong>Heads up</strong>: Treat this site like a torrenting client. Torrenting time takes between 1-2 minutes which is excellent compare to torrenting via a torrenting client which torrenting time takes 1-2 hours via torrenting clients such as bittorrent.</p>
+
+
             <p style="text-align: center">
                 <small>By using <span class="brand">nirviral.com</span>, you agree to the <a href="#" onclick="fn.openModal('#tos-modal')">Terms of Service</a></small>
             </p>
@@ -433,6 +504,7 @@ alt="web analytics"></a></div></noscript>
             </p>
         </div>
     </div>
+
     <div id="keyboard-shortcuts-modal" class="modal scroll" style="display: none">
         <h2 class="modal-title">Keyboard Shortcuts</h2>
         <div class="modal-desc">
@@ -485,6 +557,7 @@ alt="web analytics"></a></div></noscript>
                 <div class="link-info">
                     <span class="link-info-basic"><i class="icon-bolt"></i></span>
                     <span class="link-info-detailed"></span>
+
                 </div>
             </div>
             <div id="tv-show-torrent-links" class="navigable-pane link-list" data-pane-number="0"></div>
@@ -625,5 +698,181 @@ alt="web analytics"></a></div></noscript>
 
     <script type="text/javascript" src="js/vendor.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+
+    <style type="text/css">
+.brand {
+  font-family: ProximaNova-Light;
+  font-weight: 300;
+  text-shadow: 0 -1px 0 rgba(255,255,255,.3);
+}
+    #sidebar>a {
+  display: block;
+  color: #aaa;
+
+  font-family: ProximaNova-Light;
+  font-size: .875em;
+  font-weight: 300;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.media-result .result-info {
+  background-color: rgb(53, 57, 68);
+  padding: 10px;
+  position: relative;
+  margin-top: -5px;
+}
+
+
+#results-loading-indicator {
+  background: rgba(77, 83, 99, 0.84);
+  bottom: 0;
+  left: 85px;
+  position: fixed;
+  right: 0;
+    z-index: 4;
+}
+
+#sidebar {
+  bottom: 0;
+  background-color: rgb(45, 47, 58);
+  border-right: 0px solid rgb(45, 47, 58);
+  height: 100%;
+  left: 0;
+    z-index: 24;
+  padding-top: 20px;
+  position: absolute;
+  top: 0;
+  width: 85px;
+}
+
+
+
+#sidebar>a:hover {
+  background: #21222A;
+  color: #fff;
+  border-left: 3px solid #A0FFD9;
+}
+#downloads>div>#add-torrent-form #add-torrent-start {
+  border-radius: 0;
+  margin-top: 0px;
+  width: 14%;
+  width: -14px;
+  margin-right: 10px;
+  border-radius: 3px;
+  /* padding-right: 4em; */
+  /* padding-left: 5em; */
+  /* margin-left: -1px; */
+  padding: 10px 42px;
+}
+#sidebar>a.active {
+  background: #21222A;
+  color: #fff;
+  border-left: 3px solid #A0FFD9;
+}
+
+.btn, .btn-lg {
+  background: #FF8282;
+  /* background-image: linear-gradient(to bottom,#1b3d6f 0,#1b3355 100%); */
+  /* box-shadow: 0 1px 2px rgba(0,0,0,.3); */
+  color: #fff!important;
+  display: inline-block;
+  /* margin-bottom: -2em; */
+  font-weight: 400;
+  /* margin-top: 10px; */
+  padding: 10px 20px;
+  /* text-shadow: 0 -1px 0 rgba(0,0,0,.2); */
+}
+
+#downloads>div>#add-torrent-form #add-torrent-link {
+  border-radius: 3px;
+  margin-bottom: 1em;
+  float: left;
+  font-size: 1em;
+  font-weight: 400;
+  padding: 10px 100px 10px 20px;
+  width: 84%;
+}
+
+.media-result .result-info .result-title {
+  color: white;
+  font-weight: 400;
+  overflow: hidden;
+  border-bottom: 1px solid rgb(45, 47, 58);
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  text-overflow: ellipsis;
+  transition: color 100ms;
+  -o-transition: color 100ms;
+  -moz-transition: color 100ms;
+  -webkit-transition: color 100ms;
+  white-space: nowrap;
+  width: 100%;
+}
+
+#youtube-modal {
+
+    background: black;
+}
+
+#downloads>div>#torrent-list tr .torrent-list-name-container a {
+  color: #5FEAB3;
+}
+
+.main .media-search .search-results {
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  position: absolute;
+  margin-top: 4em;
+
+  right: 0;
+  top: 40px;
+}
+#results {
+  padding-top: 4em;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.media-details {
+  background: #1C1E25;
+  bottom: 0;
+  height: 100%;
+  left: 85px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 30;
+}
+a:active, a:link, a:visited {
+  color: #60CEA2;
+}
+
+.main .media-search .search-media-title {
+  border-bottom: 0px solid #333;
+  font-size: 14px;
+  margin: 0 10px;
+  padding: 10px;
+  color: rgb(181, 145, 211);
+
+  margin-top: 4em;
+  text-transform: uppercase;
+}
+
+
+input, select {
+  background: rgba(45, 47, 58, 1);
+  border-radius: 5px;
+  background-color: rgba(45, 47, 58, 1);
+  /* border-radius: 5px; */
+  border: 0px solid #111;
+  color: #aaa;
+  font-weight: 400;
+  padding: 6px;
+}
+
+    </style>
+
 </body>
 </html>
