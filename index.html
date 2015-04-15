@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
     <title>nirviral</title>
@@ -8,6 +9,7 @@
     "text/css">
     <link charset="utf-8" href="fonts/stylesf2.css" rel="stylesheet" type=
     "text/css">
+      <link rel="stylesheet" href="css/libs/animate.css">
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Comfortaa:300" rel="stylesheet" type="text/css">
@@ -41,12 +43,13 @@ alt="web analytics"></a></div></noscript>
     </script>
 </head>
 <body>
+
     <div id="top_line" style=" 
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 90;
+  z-index: 10000;
   height: 100%;
   background-color: #B591D3;
   height: 5px;
@@ -57,8 +60,7 @@ alt="web analytics"></a></div></noscript>
 
 
 
-
-
+       <section class="section--blue wow bounceInRight" data-wow-offset="300">
 
 <div id="header1">
     <center>
@@ -78,6 +80,7 @@ alt="web analytics"></a></div></noscript>
     </center>
     </div>
 
+</section>
 
 
 
@@ -85,33 +88,47 @@ alt="web analytics"></a></div></noscript>
 
     <div id="sidebar" class="scroll navigable-pane" data-pane-number="0">
         <a id="sidebar-bookmarks" class="navigable-item">
+            <section class="wow fadeInDown">
             <i class="icon-heart"></i>
+        </section>
+
             Bookmarks
         </a>
         <a id="sidebar-history" class="navigable-item">
+            <section class="wow fadeInDown">
             <i class="icon-history"></i>
+        </section>
             History
         </a>
     
         <a id="sidebar-search" class="navigable-item">
+            <section class="wow fadeInDown">
             <i class="icon-search"></i>
+        </section>
             Search
         </a>
         <a id="sidebar-movies" class="navigable-item active">
+            <section class="wow fadeInDown">
             <i class="icon-film"></i>
+        </section>
             Movies
         </a>
         <a id="sidebar-tv-shows" class="navigable-item">
+            <section class="wow fadeInDown">
             <i class="icon-tv"></i>
+        </section>
             TV
         </a>
         <a id="sidebar-downloads">
+            <section class="wow fadeInDown">
             <i class="icon-download"></i>
+        </section>
             Downloads
         </a>
 
         <div id="sidebar-foot">
             <span id="open-info" class="sidebar-foot-link simptip-position-top simptip-fade simptip-smooth" title="Info" data-tooltip="Info">
+
                 <i class="icon-info"></i>
             </span>
             <span id="open-settings" class="sidebar-foot-link simptip-position-top simptip-fade simptip-smooth" title="Settings" data-tooltip="Settings">
@@ -128,7 +145,9 @@ alt="web analytics"></a></div></noscript>
         <form class="modal-content scroll" id="settings">
             <div class="control">
                 <label for="default-download-directory">Default download location</label>
-                <input id="default-download-directory" data-storage-id="settings-default-download-directory" type="text" value="">
+                <input id="default-download-directory" data-storage-id="settings-default-download-directory" type="text" value="" style="  border-radius: 0px;
+  color: rgb(118, 117, 117);
+  background: rgb(194, 194, 194);">
             </div>
             <div class="control">
                 <label for="keep-downloaded-files">Keep downloaded files</label>
@@ -151,6 +170,7 @@ alt="web analytics"></a></div></noscript>
                 <div class="bounce2"></div>
                 <div class="bounce3"></div>
             </div>
+
             <div id="movie-bookmarks-results" class="results-page search-results navigable-pane scroll" data-pane-number="1" data-loading-indicator="#movie-bookmarks-loading-indicator" style=""></div>
         </div>
         <div class="media-search">
@@ -185,11 +205,14 @@ alt="web analytics"></a></div></noscript>
         </div>
     </div>
 
-    <div id="search-results" class="main" style="display: none;  background-color: #FFF;">
+    <div id="search-results" class="main" style="display: none;  background-color: rgb(65, 68, 80);">
         <form id="search-bar">
             <label for="keywords"><i class="icon-search"></i></label>
             <input id="keywords" type="text" autocomplete="off" placeholder="Search for TV shows or movies..." style="background-color: rgba(33, 34, 42, 1);">
         </form>
+
+
+
 
         <div class="media-search">
 
@@ -371,6 +394,9 @@ alt="web analytics"></a></div></noscript>
     <div id="modal-bg" class="modal-bg" style="display: none">
         <a class="close">&times;</a>
     </div>
+
+
+
 
     <div id="setup-modal" class="modal scroll" style="display: none">
         <h2 class="modal-title brand">nirviral.com</h2>
@@ -864,7 +890,12 @@ a:active, a:link, a:visited {
   margin-top: 4em;
   text-transform: uppercase;
 }
-
+#downloads>div>#torrent-list {
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+  color: rgb(181, 145, 211);
+}
 
 input, select {
   background: rgba(45, 47, 58, 1);
@@ -878,6 +909,30 @@ input, select {
 }
 
     </style>
-
+  <script src="dist/wow.js"></script>
+  <script>
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset:       100,
+        callback:     function(box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+      }
+    );
+    wow.init();
+    document.getElementById('moar').onclick = function() {
+      var section = document.createElement('section');
+      section.className = 'section--purple wow fadeInDown';
+      this.parentNode.insertBefore(section, this);
+    };
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+<!-- 50 made by a good lookin asian geek who goes to AHS, the other 50 contributed by geeks all over the world <3 -->
