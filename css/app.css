@@ -87,7 +87,10 @@ hr {
   border: 2px dashed #fff;
 }
 
+strong {
 
+	color: rgb(158, 111, 197);
+}
 body {
   background-color: rgb(65, 68, 80);
   color: #fff;
