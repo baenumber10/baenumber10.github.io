@@ -1,3 +1,10 @@
+
+// Made by Nick Sarath bitch.
+
+
+
+
+
 var app={maxBufferPercentage:15,status:"starting",installed:!1,connected:!1,btapp:{},player:{videojs:{},projekktor:{}}};
 (function(e){e.api||(e.api={});e=e.api;var g="udp://open.demonii.com:1337 udp://tracker.istole.it:80 http://tracker.yify-torrents.com/announce udp://tracker.publicbt.com:80 udp://tracker.openbittorrent.com:80 udp://tracker.coppersurfer.tk:6969 udp://exodus.desync.com:6969 http://exodus.desync.com:6969/announce".split(" "),b=function(c){if(!c.url)throw Error("No URL specified");var a=_.map(c.data,function(c,a){return a+"="+c}).join("&");0<_.size(c.data)&&(a="?"+a);a="http://query.yahooapis.com/v1/public/yql?q="+
 encodeURIComponent("select * from jsonpost where url='"+encodeURI(c.url+a).replace(/[!,'()*]/g,"")+"' and postdata=''")+"&format=json&env="+encodeURIComponent("store://datatables.org/alltableswithkeys");return $.post(a,function(a){try{var b=a.query.results}catch(f){console.warn("Invalid JSON data returned");"function"===typeof c.error&&c.error("Invalid JSON data returned",a);"function"===typeof c.complete&&c.complete("Invalid JSON data returned",a);return}try{b=b.postresult}catch(d){console.warn("No data returned");
